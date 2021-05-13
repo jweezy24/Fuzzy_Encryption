@@ -3,7 +3,7 @@ RM := rm -rf
 
 ODIR= bin
 SDIR= src
-CFLAGS= -I src/headers 
+CFLAGS= -I src/headers -lm
 
 
 CC=gcc
@@ -12,8 +12,9 @@ SIZE=size
 
 
 OBJS += \
-		main.o\
+		gauss.o\
 		galois.o\
+		main.o\
 
 		
 
@@ -32,3 +33,5 @@ all: bin
 bin: $(OBJ)
 	$(CC) $(CFLAGS) $(ODIR)/*  -o Fuzzy.o
 
+clean:
+	rm bin/*
