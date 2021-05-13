@@ -15,7 +15,6 @@ OBJS += \
 		gauss.o\
 		galois.o\
 		main.o\
-
 		
 
 
@@ -35,3 +34,13 @@ bin: $(OBJ)
 
 clean:
 	rm bin/*
+
+
+tx:
+	gcc -I src/headers ./src/tx.c -o ./tx.o -lm bin/galois.o bin/gauss.o
+
+rx:
+	gcc -I src/headers ./src/rx.c -o ./rx.o -lm bin/galois.o bin/gauss.o 
+
+gen:
+	gcc -I src/headers ./src/gen.c -o ./gen.o -lm bin/galois.o bin/gauss.o 
